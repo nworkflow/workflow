@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<codeSmith xmlns="http://www.codesmithtools.com/schema/csp.xsd">
+  <variables>
+    <add key="ConnectionString1" value="Data Source=.;Initial Catalog=QQ_Data;User ID=sa;Password=sql2008" />
+    <add key="ConnectionString2" value="Data Source=.;Initial Catalog=NsunDB;User ID=sa;Password=sql2008" />
+  </variables>
+  <propertySets>
+    <propertySet name="Hbms" template="D:\CodeSmithSoft\Samples\v6.5\Templates\Frameworks\PLINQO-NH\CSharp\Hbms.cst">
+      <property name="IgnoreList">
+        <stringList>
+      <string>sysdiagrams$</string>
+      <string>^dbo.aspnet</string>
+      <string>^dbo.vw_aspnet</string>
+    </stringList>
+      </property>
+      <property name="CleanExpression">
+        <stringList>
+      <string>^(sp|tbl|udf|vw)_</string>
+      <string>^\\w+_</string>
+    </stringList>
+      </property>
+      <property name="IncludeFunctions">False</property>
+      <property name="IncludeViews">False</property>
+      <property name="MapsDirectory">Maps</property>
+      <property name="SourceDatabase">
+        <connectionString>$(ConnectionString2)</connectionString>
+        <providerType>SchemaExplorer.SqlSchemaProvider,SchemaExplorer.SqlSchemaProvider</providerType>
+      </property>
+      <property name="AssemblyName">Nsun.Domain.DataContent</property>
+      <property name="EntityNamespace">Nsun.Domain.DataContent</property>
+    </propertySet>
+    <propertySet name="Entities" template="D:\CodeSmithSoft\Samples\v6.5\Templates\Frameworks\PLINQO-NH\CSharp\Entities.cst">
+      <property name="MapsDirectory">Maps</property>
+      <property name="EntitiesDirectory">Entities</property>
+      <property name="ModelsDirectory">Models</property>
+      <property name="GenerateDataContext">True</property>
+      <property name="EntityBaseClass">EBase</property>
+      <property name="SourceDatabase">
+        <connectionString>$(ConnectionString2)</connectionString>
+        <providerType>SchemaExplorer.SqlSchemaProvider,SchemaExplorer.SqlSchemaProvider</providerType>
+      </property>
+      <property name="AssemblyName">Nsun.Domain.DataContent</property>
+      <property name="BaseNamespace">Nsun.Domain.DataContent</property>
+      <property name="DataContextName">DContext</property>
+      <property name="BaseDirectory">BaseEntities</property>
+    </propertySet>
+    <propertySet name="Queries" template="D:\CodeSmithSoft\Samples\v6.5\Templates\Frameworks\PLINQO-NH\CSharp\Queries.cst">
+      <property name="MapsDirectory">Maps</property>
+      <property name="QueriesDirectory">Queries</property>
+      <property name="MethodPrefix">By</property>
+      <property name="UniqueMethodPrefix">GetBy</property>
+      <property name="MethodKeySuffix">Key</property>
+      <property name="SourceDatabase">
+        <connectionString>$(ConnectionString2)</connectionString>
+        <providerType>SchemaExplorer.SqlSchemaProvider,SchemaExplorer.SqlSchemaProvider</providerType>
+      </property>
+      <property name="DataContextName">DataContext</property>
+      <property name="BaseNamespace">Nsun.Domain.DataContent</property>
+      <property name="QueryNamespace" />
+    </propertySet>
+  </propertySets>
+</codeSmith>

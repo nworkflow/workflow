@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{15B3E0D2-6217-493A-A690-158C497F5318}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nsun.Workflow.Common</RootNamespace>
+    <AssemblyName>Nsun.Workflow.Common</AssemblyName>
+    <ProjectTypeGuids>{3D9AD99F-2412-4246-B90B-4EAA41C64699};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <StartArguments>/client:"WcfTestClient.exe"</StartArguments>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <XsdCodeGenEnabled>True</XsdCodeGenEnabled>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Infrastructure.Crosscutting\Libs\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DTOs\ExpandData.cs" />
+    <Compile Include="DTOs\InstanceNode_DTO.cs" />
+    <Compile Include="DTOs\StartInfo_DTO.cs" />
+    <Compile Include="DTOs\SubmitInfo_DTO.cs" />
+    <Compile Include="IServiceInfo.cs" />
+    <Compile Include="Models\ResultInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TemplateManager.cs" />
+    <Compile Include="Utils\ITransRouting.cs" />
+    <Compile Include="Utils\Locker.cs" />
+    <Compile Include="Utils\TransRouting.cs" />
+    <Compile Include="WorkflowService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Infrastructure.Data.MainBoundedContext\Infrastructure.Data.MainBoundedContext.csproj">
+      <Project>{6cea883a-6ca6-4661-9f68-43a92be1ddc6}</Project>
+      <Name>Infrastructure.Data.MainBoundedContext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure.Data.Seedwork\Infrastructure.Data.Seedwork.csproj">
+      <Project>{cc156cc6-36f4-44d4-b564-5da9face7ad1}</Project>
+      <Name>Infrastructure.Data.Seedwork</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nsun.Domain.MainBoundedContext\Nsun.Domain.MainBoundedContext.csproj">
+      <Project>{7dd4c222-fc13-48d4-b0e8-70b357756415}</Project>
+      <Name>Nsun.Domain.MainBoundedContext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nsun.Domain.Seedwork\Nsun.Domain.Seedwork.csproj">
+      <Project>{05186586-882f-442d-8a81-531d36f9712f}</Project>
+      <Name>Nsun.Domain.Seedwork</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nsun.Tools.Common\Nsun.Tools.Common.csproj">
+      <Project>{0c091925-7425-4fe8-83d6-d3370db21e8d}</Project>
+      <Name>Nsun.Tools.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nsun.Tools.Logger\Nsun.Tools.Logger.csproj">
+      <Project>{11ab9eff-d266-466d-b35c-cbf44b1379c2}</Project>
+      <Name>Nsun.Tools.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nsun.Workflow.Core\Nsun.Workflow.Activities.csproj">
+      <Project>{18fa2554-eb3b-4054-aeb5-fd4d5e2e6885}</Project>
+      <Name>Nsun.Workflow.Activities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{3D9AD99F-2412-4246-B90B-4EAA41C64699}">
+        <WcfProjectProperties>
+          <AutoStart>True</AutoStart>
+        </WcfProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

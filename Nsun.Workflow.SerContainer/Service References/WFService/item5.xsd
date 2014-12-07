@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Nsun.Workflow.Common.DTOs" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Nsun.Workflow.Common.DTOs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8777/WorkflowService/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:8777/WorkflowService/?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="StartInfo_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TaskName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaskType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TemplateId" type="ser:guid" />
+      <xs:element minOccurs="0" name="TemplateName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StartInfo_DTO" nillable="true" type="tns:StartInfo_DTO" />
+  <xs:complexType name="SubmitInfo_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Condition" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpandDatas" nillable="true" type="tns:ArrayOfExpandData" />
+      <xs:element minOccurs="0" name="NodeId" type="ser:guid" />
+      <xs:element minOccurs="0" name="SubmitResult" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SubmitInfo_DTO" nillable="true" type="tns:SubmitInfo_DTO" />
+  <xs:complexType name="ArrayOfExpandData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExpandData" nillable="true" type="tns:ExpandData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExpandData" nillable="true" type="tns:ArrayOfExpandData" />
+  <xs:complexType name="ExpandData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Counter" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Exp" nillable="true" type="q1:ArrayOfKeyValueOfstringstring" />
+      <xs:element minOccurs="0" name="Info" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExpandData" nillable="true" type="tns:ExpandData" />
+  <xs:complexType name="ArrayOfInstanceNode_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InstanceNode_DTO" nillable="true" type="tns:InstanceNode_DTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInstanceNode_DTO" nillable="true" type="tns:ArrayOfInstanceNode_DTO" />
+  <xs:complexType name="InstanceNode_DTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InstanceNode_DTO" nillable="true" type="tns:InstanceNode_DTO" />
+</xs:schema>

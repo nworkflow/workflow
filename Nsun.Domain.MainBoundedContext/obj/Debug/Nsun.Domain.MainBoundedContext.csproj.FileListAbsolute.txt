@@ -1,0 +1,12 @@
+E:\ComputerManager\Nsun.Domain.MainBoundedContext\bin\Debug\Nsun.Domain.MainBoundedContext.dll.config
+E:\ComputerManager\Nsun.Domain.MainBoundedContext\bin\Debug\Nsun.Domain.MainBoundedContext.dll
+E:\ComputerManager\Nsun.Domain.MainBoundedContext\bin\Debug\Nsun.Domain.MainBoundedContext.pdb
+E:\ComputerManager\Nsun.Domain.MainBoundedContext\bin\Debug\EntityFramework.dll
+E:\ComputerManager\Nsun.Domain.MainBoundedContext\bin\Debug\Microsoft.Web.XmlTransform.dll
+E:\ComputerManager\Nsun.Domain.MainBoundedContext\bin\Debug\Nsun.Domain.Seedwork.dll
+E:\ComputerManager\Nsun.Domain.MainBoundedContext\bin\Debug\NuGet.Core.dll
+E:\ComputerManager\Nsun.Domain.MainBoundedContext\bin\Debug\Nsun.Domain.Seedwork.pdb
+E:\ComputerManager\Nsun.Domain.MainBoundedContext\bin\Debug\EntityFramework.xml
+E:\ComputerManager\Nsun.Domain.MainBoundedContext\obj\Debug\Nsun.Domain.MainBoundedContext.csprojResolveAssemblyReference.cache
+E:\ComputerManager\Nsun.Domain.MainBoundedContext\obj\Debug\Nsun.Domain.MainBoundedContext.dll
+E:\ComputerManager\Nsun.Domain.MainBoundedContext\obj\Debug\Nsun.Domain.MainBoundedContext.pdb

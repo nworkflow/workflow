@@ -1,0 +1,5 @@
+E:\ComputerManager\Nsun.Tools.Logger\bin\Debug\Nsun.Tools.Logger.dll.config
+E:\ComputerManager\Nsun.Tools.Logger\bin\Debug\Nsun.Tools.Logger.dll
+E:\ComputerManager\Nsun.Tools.Logger\bin\Debug\Nsun.Tools.Logger.pdb
+E:\ComputerManager\Nsun.Tools.Logger\obj\Debug\Nsun.Tools.Logger.dll
+E:\ComputerManager\Nsun.Tools.Logger\obj\Debug\Nsun.Tools.Logger.pdb

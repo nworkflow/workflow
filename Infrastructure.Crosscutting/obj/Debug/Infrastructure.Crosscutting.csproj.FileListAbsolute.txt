@@ -1,0 +1,8 @@
+E:\ComputerManager\Infrastructure.Crosscutting\bin\Debug\Infrastructure.Crosscutting.dll.config
+E:\ComputerManager\Infrastructure.Crosscutting\bin\Debug\Infrastructure.Crosscutting.dll
+E:\ComputerManager\Infrastructure.Crosscutting\bin\Debug\Infrastructure.Crosscutting.pdb
+E:\ComputerManager\Infrastructure.Crosscutting\bin\Debug\Microsoft.Web.XmlTransform.dll
+E:\ComputerManager\Infrastructure.Crosscutting\bin\Debug\NuGet.Core.dll
+E:\ComputerManager\Infrastructure.Crosscutting\obj\Debug\Infrastructure.Crosscutting.dll
+E:\ComputerManager\Infrastructure.Crosscutting\obj\Debug\Infrastructure.Crosscutting.pdb
+E:\ComputerManager\Infrastructure.Crosscutting\obj\Debug\Infrastructure.Crosscutting.csprojResolveAssemblyReference.cache

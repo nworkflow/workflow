@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<codeSmith xmlns="http://www.codesmithtools.com/schema/csp.xsd">
+  <variables>
+    <add key="ConnectionString1" value="Data Source=.;Initial Catalog=QQ_Data;User ID=sa;Password=sql2008" />
+  </variables>
+  <propertySets>
+    <propertySet name="NsunContext" template="D:\CodeSmithSoft\Samples\v6.5\Templates\Frameworks\PLINQO-NH\QuickStart.cst">
+      <property name="LaunchVisualStudio">True</property>
+      <property name="CopyTemplatesToFolder">True</property>
+      <property name="IncludeWebProject">False</property>
+      <property name="Location">C:\Users\Leo\Documents\Visual Studio 2012\Projects\</property>
+      <property name="SolutionName">Nsun.AutoGenger</property>
+      <property name="DataProjectName">Nsun.Domain.Data</property>
+      <property name="DataContextName">QQDataContext</property>
+      <property name="WebProjectName">QQData.UI</property>
+      <property name="SourceDatabase">
+        <connectionString>$(ConnectionString1)</connectionString>
+        <providerType>SchemaExplorer.SqlSchemaProvider,SchemaExplorer.SqlSchemaProvider</providerType>
+      </property>
+    </propertySet>
+  </propertySets>
+</codeSmith>

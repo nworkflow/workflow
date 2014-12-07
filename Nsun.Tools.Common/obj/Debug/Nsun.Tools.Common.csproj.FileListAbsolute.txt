@@ -1,0 +1,6 @@
+E:\ComputerManager\Nsun.Tools.Common\bin\Debug\Nsun.Tools.Common.dll.config
+E:\ComputerManager\Nsun.Tools.Common\bin\Debug\Nsun.Tools.Common.dll
+E:\ComputerManager\Nsun.Tools.Common\bin\Debug\Nsun.Tools.Common.pdb
+E:\ComputerManager\Nsun.Tools.Common\obj\Debug\Nsun.Tools.Common.dll
+E:\ComputerManager\Nsun.Tools.Common\obj\Debug\Nsun.Tools.Common.pdb
+E:\ComputerManager\Nsun.Tools.Common\obj\Debug\Nsun.Tools.Common.csprojResolveAssemblyReference.cache

@@ -1,0 +1,41 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Default Gray Button -->
+    <RadialGradientBrush x:Key="ButtonOffStateColor" RadiusX="0.3" RadiusY="0.3" GradientOrigin="0.4,0.4" Center="0.4,0.4">
+        <GradientStop Color="DimGray" Offset="1" />
+        <GradientStop Color="#FFFFFFFF" Offset="0" />
+        <GradientStop Color="#Ababab" Offset="0.64595660749506867" />
+    </RadialGradientBrush>
+    <!-- Brushes: Close Button -->
+    <RadialGradientBrush x:Key="CloseButtonOnStateColor" RadiusX="0.35" RadiusY="0.35" GradientOrigin="0.4,0.4" Center="0.4,0.4">
+        <GradientStop Color="White" Offset="1" />
+        <GradientStop Color="White" Offset="0" />
+        <GradientStop Color="White" Offset="0.659" />
+        <GradientStop Color="White" Offset="1" />
+    </RadialGradientBrush>
+    <RadialGradientBrush x:Key="CloseButtonPressedStateColor">
+        <GradientStop Color="White" Offset="1" />
+        <GradientStop Color="White" Offset="0.659" />
+        <GradientStop Color="White" Offset="1" />
+    </RadialGradientBrush>
+    <!-- Brushes: Minimize Button -->
+    <RadialGradientBrush x:Key="MinimizeButtonOnStateColor" RadiusX="0.35" RadiusY="0.35" GradientOrigin="0.4,0.4" Center="0.4,0.4">
+        <GradientStop Color="White" Offset="0.349" />
+        <GradientStop Color="White" Offset="0.616" />
+        <GradientStop Color="White" Offset="1" />
+    </RadialGradientBrush>
+    <RadialGradientBrush x:Key="MinimizeButtonPressedStateColor">
+        <GradientStop Color="#FFFFF400" Offset="0.616" />
+        <GradientStop Color="#FFF88804" Offset="1" />
+    </RadialGradientBrush>
+    <!-- Brushes: Maximize Button -->
+    <RadialGradientBrush x:Key="MaximizeButtonOnStateColor" RadiusX="0.35" RadiusY="0.35" GradientOrigin="0.4,0.4" Center="0.4,0.4">
+        <GradientStop Color="White" Offset="0.349" />
+        <GradientStop Color="#FF24D600" Offset="0.616" />
+        <GradientStop Color="#FF189000" Offset="1" />
+    </RadialGradientBrush>
+    <RadialGradientBrush x:Key="MaximizeButtonPressedStateColor">
+        <GradientStop Color="#FF24D600" Offset="0.616" />
+        <GradientStop Color="#FF189000" Offset="1" />
+    </RadialGradientBrush>
+</ResourceDictionary>

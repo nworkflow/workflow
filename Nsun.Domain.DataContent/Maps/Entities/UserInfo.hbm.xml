@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="Nsun.Domain.DataContent" assembly="Nsun.Domain.DataContent">
+    <class name="UserInfo" table="[dbo].[UserInfo]" >
+        <id name="UserNo" column="[UserNo]" type="String" length="50" >
+            <generator class="assigned" />
+        </id>
+        <property name="UserName" column="[UserName]" type="String" not-null="false" length="50" /> 
+        <property name="Password" column="[Password]" type="String" not-null="false" length="50" /> 
+        <property name="Gender" column="[Gender]" type="Boolean" not-null="false" /> 
+        <property name="Age" column="[Age]" type="Int16" not-null="false" /> 
+        <property name="PhoneNum" column="[PhoneNum]" type="String" not-null="false" length="50" /> 
+        <property name="Address" column="[Address]" type="String" not-null="false" length="50" /> 
+        <property name="Email" column="[Email]" type="String" not-null="false" length="50" /> 
+        <property name="LoginName" column="[LoginName]" type="String" not-null="false" length="50" /> 
+        <bag name="FriendNoUserRelationshipList" inverse="true" cascade="all-delete-orphan" lazy="true" >
+            <key>
+                <column name="[FriendNo]" />
+            </key>
+            <one-to-many class="UserRelationship" />
+        </bag>
+        <bag name="UserNoUserRelationshipList" inverse="true" cascade="all-delete-orphan" lazy="true" >
+            <key>
+                <column name="[UserNo]" />
+            </key>
+            <one-to-many class="UserRelationship" />
+        </bag>
+    </class>
+</hibernate-mapping>
+

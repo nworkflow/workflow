@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="Nsun.Domain.DataContent" assembly="Nsun.Domain.DataContent">
+    <class name="RoleInfo" table="[dbo].[RoleInfos]" >
+        <id name="RoleId" column="[RoleId]" type="Int32" >
+            <generator class="native" />
+        </id>
+        <property name="RoleNumber" column="[RoleNumber]" type="String" not-null="false" length="50" /> 
+        <property name="RoleRemark" column="[RoleRemark]" type="String" not-null="false" length="50" /> 
+        <property name="RoleType" column="[RoleType]" type="Int32" not-null="false" /> 
+        <property name="IsActive" column="[IsActive]" type="Boolean" not-null="false" /> 
+    </class>
+</hibernate-mapping>
+

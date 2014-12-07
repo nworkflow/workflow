@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8777/WorkflowService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Nsun.Domain.MainBoundedContext.WorkflowModule.Aggregates.WorkflowAgg" />
+  <xs:import schemaLocation="http://localhost:8777/WorkflowService/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Nsun.Workflow.Common.DTOs" />
+  <xs:import schemaLocation="http://localhost:8777/WorkflowService/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:element name="NewTemplate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Nsun.Domain.MainBoundedContext.WorkflowModule.Aggregates.WorkflowAgg" minOccurs="0" name="nsTemplateInfo" nillable="true" type="q1:NSTemplateInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewTemplateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NewTemplateResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewTemplateType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Nsun.Domain.MainBoundedContext.WorkflowModule.Aggregates.WorkflowAgg" minOccurs="0" name="nsTemplateInfo" nillable="true" type="q2:NSTemplateType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewTemplateTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NewTemplateTypeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DelTemplateTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Nsun.Domain.MainBoundedContext.WorkflowModule.Aggregates.WorkflowAgg" minOccurs="0" name="delItems" nillable="true" type="q3:ArrayOfNSTemplateType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DelTemplateTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DelTemplateTypesResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewTemplateTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Nsun.Domain.MainBoundedContext.WorkflowModule.Aggregates.WorkflowAgg" minOccurs="0" name="nsTemplateInfos" nillable="true" type="q4:ArrayOfNSTemplateType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewTemplateTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NewTemplateTypesResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllTemplateType">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllTemplateTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Nsun.Domain.MainBoundedContext.WorkflowModule.Aggregates.WorkflowAgg" minOccurs="0" name="GetAllTemplateTypeResult" nillable="true" type="q5:ArrayOfNSTemplateType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllTemplateInfoByType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllTemplateInfoByTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Nsun.Domain.MainBoundedContext.WorkflowModule.Aggregates.WorkflowAgg" minOccurs="0" name="GetAllTemplateInfoByTypeResult" nillable="true" type="q6:ArrayOfNSTemplateInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StartWorkflowInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Nsun.Workflow.Common.DTOs" minOccurs="0" name="startInfo" nillable="true" type="q7:StartInfo_DTO" />
+        <xs:element minOccurs="0" name="errorInfos" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StartWorkflowInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="StartWorkflowInfoResult" type="q8:guid" />
+        <xs:element minOccurs="0" name="errorInfos" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNSInfoInfosByTaskId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="taskId" type="q9:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNSInfoInfosByTaskIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Nsun.Domain.MainBoundedContext.WorkflowModule.Aggregates.WorkflowAgg" minOccurs="0" name="GetNSInfoInfosByTaskIdResult" nillable="true" type="q10:ArrayOfNSInstanceInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNSNodeInfosByInstanceId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="instanceId" type="q11:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNSNodeInfosByInstanceIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Nsun.Domain.MainBoundedContext.WorkflowModule.Aggregates.WorkflowAgg" minOccurs="0" name="GetNSNodeInfosByInstanceIdResult" nillable="true" type="q12:ArrayOfNSNodeInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNSRouingData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q13:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNSRouingDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Nsun.Domain.MainBoundedContext.WorkflowModule.Aggregates.WorkflowAgg" minOccurs="0" name="GetNSRouingDataResult" nillable="true" type="q14:ArrayOfNSRoutingData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitWorkflow">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Nsun.Workflow.Common.DTOs" minOccurs="0" name="submitInfo" nillable="true" type="q15:SubmitInfo_DTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitWorkflowResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SubmitWorkflowResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNodesByTemplateId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="templateId" type="q16:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNodesByTemplateIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Nsun.Workflow.Common.DTOs" minOccurs="0" name="GetNodesByTemplateIdResult" nillable="true" type="q17:ArrayOfInstanceNode_DTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTemplateByIds">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="templateId" type="q18:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTemplateByIdsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Nsun.Domain.MainBoundedContext.WorkflowModule.Aggregates.WorkflowAgg" minOccurs="0" name="GetTemplateByIdsResult" nillable="true" type="q19:NSTemplateInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

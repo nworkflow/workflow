@@ -1,0 +1,51 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:UC="clr-namespace:Nsun.Common.UC" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="Nsun.Tools.WorkflowDesigner.Views.DebugWorkflowInfo"
+        Title="流程调试" Height="425" Width="600" Style="{StaticResource NsunWindowStyle}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="140"/>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="btnTemplateName" Grid.Column="1" Content="..." Style="{StaticResource comMinButtonStyle}"  HorizontalAlignment="Right" Width="30" Click="btnTemplateName_Click"/>
+        <Button x:Name="btnGetInstances" Grid.Column="2" Grid.Row="2" Content="获取流程" Style="{StaticResource comMinButtonStyle}" Height="24" VerticalAlignment="Top" Click="btnGetInstances_Click" />
+        <Button x:Name="btnGetCurrentNode"  Grid.Column="2" Grid.Row="2" Height="24" VerticalAlignment="Top" Margin="0,30,0,0" Content="获取节点" Style="{StaticResource comMinButtonStyle}"  Click="btnGetCurrentNode_Click"/>
+        <Button x:Name="btnStartWorkflow"  Content="启动流程" Style="{StaticResource comMinButtonStyle}" Grid.Column="2" Click="btnStartWorkflow_Click"/>
+
+        <TextBlock Text="模板名称：" Style="{StaticResource comTextBlockStyle}"/>
+        <TextBox  x:Name="txtTemplateName" Margin="3,3,40,3" Grid.Column="1" />
+
+        <TextBlock Text="任务名称：" Style="{StaticResource comTextBlockStyle}" Grid.Row="1"/>
+        <TextBox  x:Name="txtTaskId" Margin="3"  Grid.Column="1" Grid.Row="1"/>
+
+        <TextBlock Text="流程列表：" Style="{StaticResource comTextBlockStyle}" Grid.Row="2"/>
+        <ListBox x:Name="lstInstanceInfos" Grid.Column="1" Grid.Row="2" Margin="3" DisplayMemberPath="Id"/>
+        <TextBlock Text="节点列表：" Style="{StaticResource comTextBlockStyle}" Grid.Row="3"/>
+        <ListBox x:Name="lstNodeInfos" Grid.Column="1" Grid.Row="3" Margin="3" DisplayMemberPath="NodeName"/>
+        <StackPanel Grid.Column="2" Grid.Row="3">
+            <ComboBox x:Name="cmbSubmitType"  Margin="3" Height="24"/>
+            <ComboBox x:Name="cmbBacknodes" Margin="3" Height="24" />
+            <TextBox x:Name="txtSubmit"  Height="24" VerticalAlignment="Top"/>
+            <Button  x:Name="btnSubmit" Content="下发"  Style="{StaticResource comMinButtonStyle}" Margin="3" Height="24" VerticalAlignment="Top" Click="btnSubmit_Click"/>
+        </StackPanel>
+        <DataGrid Name="grdOtherInfo" Grid.ColumnSpan="3" Grid.Row="4" Margin="3" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="TransData" Binding="{Binding TransData}"/>
+                <DataGridTextColumn Header="TransIn" Binding="{Binding TransIn}"/>
+                <DataGridTextColumn Header="TransOut" Binding="{Binding TransOut}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock x:Name="txbMsg" Grid.ColumnSpan="3" Grid.Row="5" Foreground="Red"></TextBlock>
+    </Grid>
+</Window>

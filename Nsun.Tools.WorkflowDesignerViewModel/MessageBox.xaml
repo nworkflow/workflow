@@ -1,0 +1,14 @@
+﻿<Window x:Class="Nsun.Tools.WorkflowDesignerViewModel.MessageBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MessageBox" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>      
+        </Grid.RowDefinitions>
+        <TextBox Name="txtMsg" />
+        
+        <Button Grid.Row="1" Width="60" HorizontalAlignment="Right" Margin="3" Content="确定" Click="Button_Click_1"/>
+    </Grid>
+</Window>

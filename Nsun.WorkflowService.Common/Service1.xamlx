@@ -1,0 +1,45 @@
+﻿<WorkflowService ConfigurationName="Service1" Name="Service1"  
+    mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces"
+    xmlns:mv="clr-namespace:Microsoft.VisualBasic;assembly=System"
+    xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+    xmlns:s="clr-namespace:System;assembly=mscorlib"
+    xmlns:s1="clr-namespace:System;assembly=System"
+    xmlns:s2="clr-namespace:System;assembly=System.Xml"
+    xmlns:s3="clr-namespace:System;assembly=System.Core"    
+    xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System"
+    xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=System.ServiceModel"
+    xmlns:scg2="clr-namespace:System.Collections.Generic;assembly=System.Core"
+    xmlns:scg3="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+    xmlns:sd="clr-namespace:System.Data;assembly=System.Data"
+    xmlns:sl="clr-namespace:System.Linq;assembly=System.Core"
+    xmlns:st="clr-namespace:System.Text;assembly=mscorlib" 
+    xmlns="http://schemas.microsoft.com/netfx/2009/xaml/servicemodel"
+    xmlns:contract="http://tempuri.org/"
+    xmlns:sad="clr-namespace:System.Activities.Debugger;assembly=System.Activities"
+    xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"> 
+  <p:Sequence DisplayName="Sequential Service" sad:XamlDebuggerXmlReader.FileName="C:\Users\Leo\Documents\Visual Studio 2012\Projects\ComputerManager\Nsun.WorkflowService.Common\Service1.xamlx"  
+              mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces" >
+    
+    <p:Sequence.Variables>
+      <p:Variable x:TypeArguments="CorrelationHandle" Name="handle" />
+      <p:Variable x:TypeArguments="x:Int32" Name="data" />
+    </p:Sequence.Variables>
+    <Receive x:Name="__ReferenceID0" DisplayName="ReceiveRequest" OperationName="GetData" ServiceContractName="contract:IService" CanCreateInstance="True">
+     <Receive.CorrelationInitializers>
+       <RequestReplyCorrelationInitializer CorrelationHandle="[handle]" />
+     </Receive.CorrelationInitializers>
+    <ReceiveMessageContent>
+    <p:OutArgument x:TypeArguments="x:Int32">[data]</p:OutArgument>
+      </ReceiveMessageContent>
+    </Receive>
+    
+    <SendReply Request="{x:Reference Name=__ReferenceID0}" DisplayName="SendResponse" >
+     <SendMessageContent>
+       <p:InArgument x:TypeArguments="x:String">[data.ToString()]</p:InArgument>
+     </SendMessageContent>
+    </SendReply>
+    
+  </p:Sequence>
+  
+</WorkflowService>

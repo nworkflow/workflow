@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="Nsun.Workflow.WPFService.CtlTable"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+           
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="300">
+    <Border BorderBrush="LightGray" BorderThickness="{Binding LabelBorderThickness}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="{Binding LabelColumn0_Width}"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Foreground="Blue" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="3" Name="txbUserName" Text="{Binding LabelName}"/>
+            <ContentControl Grid.Column="1" Content="{Binding LabelContent}"/>
+        </Grid>
+    </Border>
+</UserControl>

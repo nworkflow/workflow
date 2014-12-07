@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root>
+  <DesignerItems>
+    <DesignerItem>
+      <Name>标准节点</Name>
+      <Type>DiagramDesigner.DesignerItem</Type>
+      <BType>Start</BType>
+      <Position>172,0,43,44</Position>
+      <ID>8827223f-9772-4bb2-a914-ec0e6b466776</ID>
+      <zIndex>0</zIndex>
+      <IsGroup>false</IsGroup>
+      <ParentID>00000000-0000-0000-0000-000000000000</ParentID>
+      <Details>{"Name":"标准节点","NodeID":"8827223f-9772-4bb2-a914-ec0e6b466776","NodeType":"Start"}</Details>
+      <Content>&lt;Ellipse Tag="Start" ToolTip="Ellipse" IsHitTestVisible="False" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"&gt;&lt;Ellipse.Fill&gt;&lt;RadialGradientBrush Center="0.2,0.2" RadiusX="0.8" RadiusY="0.8" GradientOrigin="0.2,0.2"&gt;&lt;RadialGradientBrush.GradientStops&gt;&lt;GradientStop Color="#FFFFFFFF" Offset="0" /&gt;&lt;GradientStop Color="#FF008000" Offset="0.9" /&gt;&lt;/RadialGradientBrush.GradientStops&gt;&lt;/RadialGradientBrush&gt;&lt;/Ellipse.Fill&gt;&lt;/Ellipse&gt;</Content>
+    </DesignerItem>
+  </DesignerItems>
+  <Connections />
+</Root>

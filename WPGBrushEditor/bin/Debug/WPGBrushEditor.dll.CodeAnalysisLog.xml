@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="d:\program files\microsoft visual studio 11.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="11.0">
+ <Targets>
+  <Target Name="E:\ComputerManager\WPGBrushEditor\bin\Debug\WPGBrushEditor.dll">
+   <Modules>
+    <Module Name="wpgbrusheditor.dll">
+     <Namespaces>
+      <Namespace Name="ICSharpCode.SharpDevelop.Widgets">
+       <Types>
+        <Type Name="DragListener" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Changed" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2013-12-22 14:54:26Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">將 'DragHandler' 的第一個參數宣告為名為 'sender' 的物件。</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">將 'DragHandler' 的第二個參數宣告為 EventArgs，或宣告為可擴充 EventArgs 且名為 'e' 的型別執行個體。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Completed" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2013-12-22 14:54:26Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">將 'DragHandler' 的第一個參數宣告為名為 'sender' 的物件。</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">將 'DragHandler' 的第二個參數宣告為 EventArgs，或宣告為可擴充 EventArgs 且名為 'e' 的型別執行個體。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Started" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2013-12-22 14:54:26Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">將 'DragHandler' 的第一個參數宣告為名為 'sender' 的物件。</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">將 'DragHandler' 的第二個參數宣告為 EventArgs，或宣告為可擴充 EventArgs 且名為 'e' 的型別執行個體。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009">
+   <Name>事件處理常式必須正確宣告</Name>
+   <Description>根據慣例，.NET 事件擁有兩個參數，分別用於指定事件發送者和事件資料。事件處理常式簽章的格式應為: void MyEventHandler(object sender, EventArgs e)。即使可以採用更特殊的型別，'sender' 參數仍固定為 System.Object 型別。'e' 參數固定為 System.EventArgs 型別。不提供事件資料的事件應使用 System.EventHandler 委派型別。事件處理常式會傳回 void，如此才能將各事件傳送給多個目標方法。目標傳回的任何值都會在第一次呼叫之後遺失。</Description>
+   <Resolution Name="First">將 {0} 的第一個參數宣告為名為 'sender' 的物件。</Resolution>
+   <Resolution Name="Second">將 {0} 的第二個參數宣告為 EventArgs，或宣告為可擴充 EventArgs 且名為 'e' 的型別執行個體。</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182133(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">分類</String>
+  <String Key="Certainty">確實性</String>
+  <String Key="CollapseAll">全部摺疊</String>
+  <String Key="CheckId">檢查 ID</String>
+  <String Key="Error">錯誤</String>
+  <String Key="Errors">錯誤</String>
+  <String Key="ExpandAll">全部展開</String>
+  <String Key="Help">說明</String>
+  <String Key="Line">行</String>
+  <String Key="Messages">訊息</String>
+  <String Key="LocationNotStoredInPdb">[位置未儲存在 PDB]</String>
+  <String Key="Project">專案</String>
+  <String Key="Resolution">解析度</String>
+  <String Key="Rule">規則</String>
+  <String Key="RuleFile">規則檔</String>
+  <String Key="RuleDescription">規則描述</String>
+  <String Key="Source">來源</String>
+  <String Key="Status">狀態</String>
+  <String Key="Target">目標</String>
+  <String Key="Warning">警告</String>
+  <String Key="Warnings">警告</String>
+  <String Key="ReportTitle">程式碼分析報告</String>
+ </Localized>
+</FxCopReport>

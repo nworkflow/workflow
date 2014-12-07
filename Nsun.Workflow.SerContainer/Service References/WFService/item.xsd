@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Nsun.Domain.MainBoundedContext.WorkflowModule.Aggregates.WorkflowAgg" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Nsun.Domain.MainBoundedContext.WorkflowModule.Aggregates.WorkflowAgg" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8777/WorkflowService/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.Seedwork" />
+  <xs:import schemaLocation="http://localhost:8777/WorkflowService/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="NSTemplateInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.Seedwork" base="q1:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreateTime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+          <xs:element minOccurs="0" name="TemplateName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TemplateText" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TemplateType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NSTemplateInfo" nillable="true" type="tns:NSTemplateInfo" />
+  <xs:complexType name="NSTemplateType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.Seedwork" base="q2:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="TemplateDes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TemplateType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NSTemplateType" nillable="true" type="tns:NSTemplateType" />
+  <xs:complexType name="ArrayOfNSTemplateType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NSTemplateType" nillable="true" type="tns:NSTemplateType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNSTemplateType" nillable="true" type="tns:ArrayOfNSTemplateType" />
+  <xs:complexType name="ArrayOfNSTemplateInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NSTemplateInfo" nillable="true" type="tns:NSTemplateInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNSTemplateInfo" nillable="true" type="tns:ArrayOfNSTemplateInfo" />
+  <xs:complexType name="ArrayOfNSInstanceInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NSInstanceInfo" nillable="true" type="tns:NSInstanceInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNSInstanceInfo" nillable="true" type="tns:ArrayOfNSInstanceInfo" />
+  <xs:complexType name="NSInstanceInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.Seedwork" base="q3:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EndTime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="InstanceName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParentNodeId" nillable="true" type="ser:guid" />
+          <xs:element minOccurs="0" name="RunState" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="TaskId" type="ser:guid" />
+          <xs:element minOccurs="0" name="TemplateId" type="ser:guid" />
+          <xs:element minOccurs="0" name="TemplateName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NSInstanceInfo" nillable="true" type="tns:NSInstanceInfo" />
+  <xs:complexType name="ArrayOfNSNodeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NSNodeInfo" nillable="true" type="tns:NSNodeInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNSNodeInfo" nillable="true" type="tns:ArrayOfNSNodeInfo" />
+  <xs:complexType name="NSNodeInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.Seedwork" base="q4:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="GroupName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InstanceId" type="ser:guid" />
+          <xs:element minOccurs="0" name="NodeDes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NodeId" type="ser:guid" />
+          <xs:element minOccurs="0" name="NodeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParentId" nillable="true" type="ser:guid" />
+          <xs:element minOccurs="0" name="RunState" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubmitOptions" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubmitResult" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubmitTime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="SubmitUserNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TaskId" type="ser:guid" />
+          <xs:element minOccurs="0" name="TransUserNo" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NSNodeInfo" nillable="true" type="tns:NSNodeInfo" />
+  <xs:complexType name="ArrayOfNSRoutingData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NSRoutingData" nillable="true" type="tns:NSRoutingData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNSRoutingData" nillable="true" type="tns:ArrayOfNSRoutingData" />
+  <xs:complexType name="NSRoutingData">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.Seedwork" base="q5:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="InstanceId" type="ser:guid" />
+          <xs:element minOccurs="0" name="TransData" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TransIn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TransOut" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NSRoutingData" nillable="true" type="tns:NSRoutingData" />
+</xs:schema>

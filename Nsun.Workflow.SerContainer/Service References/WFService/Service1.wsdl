@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8777/WorkflowService/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8777/WorkflowService/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8777/WorkflowService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Nsun.Domain.MainBoundedContext.WorkflowModule.Aggregates.WorkflowAgg" />
+      <xsd:import schemaLocation="http://localhost:8777/WorkflowService/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Samples.NLayerApp.Domain.Seedwork" />
+      <xsd:import schemaLocation="http://localhost:8777/WorkflowService/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Nsun.Workflow.Common.DTOs" />
+      <xsd:import schemaLocation="http://localhost:8777/WorkflowService/?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_NewTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:NewTemplate" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NewTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NewTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NewTemplateType_InputMessage">
+    <wsdl:part name="parameters" element="tns:NewTemplateType" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NewTemplateType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NewTemplateTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DelTemplateTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelTemplateTypes" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DelTemplateTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelTemplateTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NewTemplateTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:NewTemplateTypes" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NewTemplateTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NewTemplateTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllTemplateType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTemplateType" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllTemplateType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTemplateTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllTemplateInfoByType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTemplateInfoByType" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllTemplateInfoByType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTemplateInfoByTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_StartWorkflowInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartWorkflowInfo" />
+  </wsdl:message>
+  <wsdl:message name="IService1_StartWorkflowInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StartWorkflowInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetNSInfoInfosByTaskId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNSInfoInfosByTaskId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetNSInfoInfosByTaskId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNSInfoInfosByTaskIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetNSNodeInfosByInstanceId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNSNodeInfosByInstanceId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetNSNodeInfosByInstanceId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNSNodeInfosByInstanceIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetNSRouingData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNSRouingData" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetNSRouingData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNSRouingDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SubmitWorkflow_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitWorkflow" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SubmitWorkflow_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitWorkflowResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetNodesByTemplateId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNodesByTemplateId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetNodesByTemplateId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNodesByTemplateIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetTemplateByIds_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTemplateByIds" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetTemplateByIds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTemplateByIdsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="NewTemplate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/NewTemplate" message="tns:IService1_NewTemplate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/NewTemplateResponse" message="tns:IService1_NewTemplate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NewTemplateType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/NewTemplateType" message="tns:IService1_NewTemplateType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/NewTemplateTypeResponse" message="tns:IService1_NewTemplateType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelTemplateTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DelTemplateTypes" message="tns:IService1_DelTemplateTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DelTemplateTypesResponse" message="tns:IService1_DelTemplateTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NewTemplateTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/NewTemplateTypes" message="tns:IService1_NewTemplateTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/NewTemplateTypesResponse" message="tns:IService1_NewTemplateTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTemplateType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllTemplateType" message="tns:IService1_GetAllTemplateType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllTemplateTypeResponse" message="tns:IService1_GetAllTemplateType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTemplateInfoByType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllTemplateInfoByType" message="tns:IService1_GetAllTemplateInfoByType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllTemplateInfoByTypeResponse" message="tns:IService1_GetAllTemplateInfoByType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StartWorkflowInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/StartWorkflowInfo" message="tns:IService1_StartWorkflowInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/StartWorkflowInfoResponse" message="tns:IService1_StartWorkflowInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNSInfoInfosByTaskId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetNSInfoInfosByTaskId" message="tns:IService1_GetNSInfoInfosByTaskId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetNSInfoInfosByTaskIdResponse" message="tns:IService1_GetNSInfoInfosByTaskId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNSNodeInfosByInstanceId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetNSNodeInfosByInstanceId" message="tns:IService1_GetNSNodeInfosByInstanceId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetNSNodeInfosByInstanceIdResponse" message="tns:IService1_GetNSNodeInfosByInstanceId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNSRouingData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetNSRouingData" message="tns:IService1_GetNSRouingData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetNSRouingDataResponse" message="tns:IService1_GetNSRouingData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitWorkflow">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SubmitWorkflow" message="tns:IService1_SubmitWorkflow_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SubmitWorkflowResponse" message="tns:IService1_SubmitWorkflow_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNodesByTemplateId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetNodesByTemplateId" message="tns:IService1_GetNodesByTemplateId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetNodesByTemplateIdResponse" message="tns:IService1_GetNodesByTemplateId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTemplateByIds">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetTemplateByIds" message="tns:IService1_GetTemplateByIds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetTemplateByIdsResponse" message="tns:IService1_GetTemplateByIds_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="NewTemplate">
+      <soap:operation soapAction="http://tempuri.org/IService1/NewTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewTemplateType">
+      <soap:operation soapAction="http://tempuri.org/IService1/NewTemplateType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelTemplateTypes">
+      <soap:operation soapAction="http://tempuri.org/IService1/DelTemplateTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewTemplateTypes">
+      <soap:operation soapAction="http://tempuri.org/IService1/NewTemplateTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTemplateType">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllTemplateType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTemplateInfoByType">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllTemplateInfoByType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartWorkflowInfo">
+      <soap:operation soapAction="http://tempuri.org/IService1/StartWorkflowInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNSInfoInfosByTaskId">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetNSInfoInfosByTaskId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNSNodeInfosByInstanceId">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetNSNodeInfosByInstanceId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNSRouingData">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetNSRouingData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitWorkflow">
+      <soap:operation soapAction="http://tempuri.org/IService1/SubmitWorkflow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNodesByTemplateId">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetNodesByTemplateId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTemplateByIds">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetTemplateByIds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://localhost:8777/WorkflowService/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

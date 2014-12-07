@@ -1,0 +1,16 @@
+E:\ComputerManager\Infrastructure.Data.Seedwork\bin\Debug\Infrastructure.Data.Seedwork.dll.config
+E:\ComputerManager\Infrastructure.Data.Seedwork\bin\Debug\Infrastructure.Data.Seedwork.dll
+E:\ComputerManager\Infrastructure.Data.Seedwork\bin\Debug\Infrastructure.Data.Seedwork.pdb
+E:\ComputerManager\Infrastructure.Data.Seedwork\bin\Debug\EntityFramework.dll
+E:\ComputerManager\Infrastructure.Data.Seedwork\bin\Debug\Infrastructure.Crosscutting.dll
+E:\ComputerManager\Infrastructure.Data.Seedwork\bin\Debug\Microsoft.Web.XmlTransform.dll
+E:\ComputerManager\Infrastructure.Data.Seedwork\bin\Debug\Nsun.Domain.Seedwork.dll
+E:\ComputerManager\Infrastructure.Data.Seedwork\bin\Debug\NuGet.Core.dll
+E:\ComputerManager\Infrastructure.Data.Seedwork\bin\Debug\Infrastructure.Crosscutting.pdb
+E:\ComputerManager\Infrastructure.Data.Seedwork\bin\Debug\Nsun.Domain.Seedwork.pdb
+E:\ComputerManager\Infrastructure.Data.Seedwork\bin\Debug\EntityFramework.xml
+E:\ComputerManager\Infrastructure.Data.Seedwork\obj\Debug\Infrastructure.Data.Seedwork.csprojResolveAssemblyReference.cache
+E:\ComputerManager\Infrastructure.Data.Seedwork\obj\Debug\Infrastructure.Data.Seedwork.Resources.Messages.resources
+E:\ComputerManager\Infrastructure.Data.Seedwork\obj\Debug\Infrastructure.Data.Seedwork.csproj.GenerateResource.Cache
+E:\ComputerManager\Infrastructure.Data.Seedwork\obj\Debug\Infrastructure.Data.Seedwork.dll
+E:\ComputerManager\Infrastructure.Data.Seedwork\obj\Debug\Infrastructure.Data.Seedwork.pdb

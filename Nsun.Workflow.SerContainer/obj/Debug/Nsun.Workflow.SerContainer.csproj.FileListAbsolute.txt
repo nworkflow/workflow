@@ -1,0 +1,7 @@
+E:\ComputerManager\Nsun.Workflow.SerContainer\bin\Debug\Nsun.Workflow.SerContainer.dll.config
+E:\ComputerManager\Nsun.Workflow.SerContainer\bin\Debug\Nsun.Workflow.SerContainer.dll
+E:\ComputerManager\Nsun.Workflow.SerContainer\bin\Debug\Nsun.Workflow.SerContainer.pdb
+E:\ComputerManager\Nsun.Workflow.SerContainer\obj\Debug\Nsun.Workflow.SerContainer.Properties.Resources.resources
+E:\ComputerManager\Nsun.Workflow.SerContainer\obj\Debug\Nsun.Workflow.SerContainer.csproj.GenerateResource.Cache
+E:\ComputerManager\Nsun.Workflow.SerContainer\obj\Debug\Nsun.Workflow.SerContainer.dll
+E:\ComputerManager\Nsun.Workflow.SerContainer\obj\Debug\Nsun.Workflow.SerContainer.pdb

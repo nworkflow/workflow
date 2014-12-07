@@ -1,0 +1,51 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:UC="clr-namespace:Nsun.Common.UC" 
+        x:Class="DiagramDesigner.Views.TemplateTypeManager"
+        Style="{StaticResource NsunWindowStyle}"
+        xmlns:vmt="clr-namespace:Nsun.Tools.WorkflowDesignerViewModel;assembly=Nsun.Tools.WorkflowDesignerViewModel"
+        Title="模板类型管理" Height="400" Width="500">
+    <Window.Resources>
+        <vmt:TemplateTypeManagerViewModel x:Key="vm"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource vm}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <UC:CtlTable Grid.Row="0" Grid.ColumnSpan="2" LabelName="模板类型名称:" LabelBorderThickness="1" LabelColumn0_Width="80">
+            <UC:CtlTable.LabelContent>
+                <TextBox  Margin="3" Text="{Binding NsTemplateTypeSelect.TEntity.TemplateType,Mode=TwoWay,Source={StaticResource vm}}"/>
+            </UC:CtlTable.LabelContent>
+        </UC:CtlTable>
+        <UC:CtlTable Grid.Row="1" Grid.ColumnSpan="2" LabelName="描述" LabelBorderThickness="1,0,1,1" LabelColumn0_Width="80">
+            <UC:CtlTable.LabelContent>
+                <TextBox Margin="3" Text="{Binding NsTemplateTypeSelect.TEntity.TemplateDes,Mode=TwoWay, Source={StaticResource vm}}"/>
+            </UC:CtlTable.LabelContent>
+        </UC:CtlTable>
+        
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1"  HorizontalAlignment="Right">
+            <Button Content="添加" Style="{StaticResource comMinButtonStyle}" Command="{Binding AddNewTemplateTypeCommand}"/>
+            <Button Content="删除" Style="{StaticResource comMinButtonStyle}" Command="{Binding DelTemplateTypeCommand}"/>
+            <Button Content="保存" Style="{StaticResource comMinButtonStyle}" Command="{Binding SaveTemplateTypeCommand}"/>
+        </StackPanel>
+
+        <Border  Style="{StaticResource titleBorder}" Grid.Row="2" Width="100">
+            <TextBlock Text="列表" Style="{StaticResource titleTextBlocStyle}"/>
+        </Border>
+        <DataGrid Grid.Row="3" AutoGenerateColumns="False" ItemsSource="{Binding NSTemplateTypes}" SelectedItem="{Binding NSTemplateTypeSelect,Mode=TwoWay}"  Margin="3,0,3,0" Grid.ColumnSpan="2" BorderBrush="Silver" BorderThickness="2">
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn Header="选择" IsReadOnly="True" Binding="{Binding IsChecked}"/>
+                <DataGridTextColumn Header="类型名称" IsReadOnly="True" Binding="{Binding TEntity.TemplateType}"/>
+                <DataGridTextColumn Header="模板描述" IsReadOnly="True" Binding="{Binding TEntity.TemplateDes}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

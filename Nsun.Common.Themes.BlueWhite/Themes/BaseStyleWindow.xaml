@@ -1,0 +1,103 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    x:Class="Resource_Dictionaries.BaseStyleWindow">
+
+    <ResourceDictionary.MergedDictionaries>
+        <!-- Resource Dictionary containing Buttons used for the Mac Window titlebar buttons-->
+        <ResourceDictionary Source="TitleBarButtonsStyle.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <!-- Border defining the frame of the Window -->
+    <Style x:Key="MacwindowBorder" TargetType="Border">
+        <Setter Property="Background" Value="#AAFFFFFF" />
+        <Setter Property="BorderBrush" Value="DimGray" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+    </Style>
+
+    <!-- Window Template -->
+    <ControlTemplate x:Key="NsunWindowTemplate" TargetType="{x:Type Window}">
+        <Grid>
+            <Border Name="MacWindowFrame" Style="{StaticResource MacwindowBorder}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="26" />
+                        <RowDefinition />
+						<RowDefinition Height="15"/>
+                    </Grid.RowDefinitions>
+                    <!-- The title bar. -->
+                    <Border MouseLeftButtonDown="titleBar_MouseLeftButtonDown" Padding="15" CornerRadius="0">
+              
+                    </Border>
+
+                    <Border  MouseLeftButtonDown="titleBar_MouseLeftButtonDown">
+                    	<Border.Background>
+                    		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    			<GradientStop Color="AliceBlue" Offset="0"/>
+                    			<GradientStop Color="#8800008B" Offset="1"/>
+                    		</LinearGradientBrush>
+                    	</Border.Background>
+                        <Path AllowDrop="True"  Stretch="Fill" Fill="#88DBE2F4" Data="F1 M 757.275,449.335C 757.156,454.057 757.583,460.835 756.916,463.502C 756.25,466.168 750.583,467.835 746.276,468.667C 739.583,469.168 451.498,468.223 304.109,468.001C 287.859,468.501 272.712,462.164 237.685,490.959C 202.659,519.754 180.916,525.835 153.916,526.167C 126.917,526.5 31.3331,526.001 19.3331,524.334C 7.33313,522.667 40.0295,465.486 22.7731,447.571L 757.275,449.335 Z " Margin="-0.337,-0.832,-0.696,0.456" RenderTransformOrigin="0.5,0.5">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="0.175"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Border>
+
+                    <TextBlock Foreground="#FF00008B" Margin="15,3" Text="{TemplateBinding Title}"   MouseLeftButtonDown="titleBar_MouseLeftButtonDown" 
+                               HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="2,2,5,2" VerticalAlignment="Top">
+                        
+                        <Button Style="{StaticResource MinimizeRadialButton}" Click="minimizeButton_Click" 
+                                HorizontalAlignment="Left" VerticalAlignment="Center" 
+                            Margin="5,0,0,0" />
+                        <Button Style="{StaticResource MaximizeRadialButton}" Click="maximizeButton_Click" 
+                                HorizontalAlignment="Left" VerticalAlignment="Center" 
+                            Margin="5,0,0,0" />
+							<Button Style="{StaticResource CloseRadialButton}" Click="closeButton_Click" 
+                                HorizontalAlignment="Left" VerticalAlignment="Center" 
+                            Margin="5,0,0,0" />
+                    </StackPanel>
+                    <!-- The window content. -->
+                    <Border  Grid.Row="1" BorderBrush="Blue" BorderThickness="1">
+                    	<Border.Background>
+                    		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    			<GradientStop Color="AliceBlue" Offset="0"/>
+                    			<GradientStop Color="#FFFFFF" Offset="1"/>
+								<GradientStop Color="AliceBlue" Offset="2"/>
+                    		</LinearGradientBrush>
+                    	</Border.Background>
+                    	
+                        <AdornerDecorator>
+                            <ContentPresenter />
+                        </AdornerDecorator>
+                    </Border>
+					<Border Grid.Row="2">
+						<Border.Background>
+                    		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    			<GradientStop Color="#8800008B" Offset="0"/>
+                    			<GradientStop Color="#880A0A78" Offset="1"/>
+                    		</LinearGradientBrush>
+                    	</Border.Background>
+                        <TextBlock Foreground="White" Text="@copyright nsunleo 2013-2030" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" FontSize="6"/>
+					</Border>
+                </Grid>
+            </Border>
+        </Grid>
+    </ControlTemplate>
+
+    <Style x:Key="NsunWindowStyle" TargetType="Window">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="WindowStyle" Value="None" />
+        <Setter Property="AllowsTransparency" Value="True" />
+        <Setter Property="Opacity" Value="0.95" />
+        <Setter Property="Template" Value="{StaticResource NsunWindowTemplate}" />
+    </Style>
+
+</ResourceDictionary>

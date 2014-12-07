@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{18FA2554-EB3B-4054-AEB5-FD4D5E2E6885}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nsun.Workflow.Core</RootNamespace>
+    <AssemblyName>Nsun.Workflow.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\Infrastructure.Crosscutting\Libs\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Activities\NotifyMsgBookmark.cs" />
+    <Compile Include="Activities\SubRoutingBookmark.cs" />
+    <Compile Include="Activities\SubRoutingsBookmark.cs" />
+    <Compile Include="ActivityConst.cs" />
+    <Compile Include="Args\WFArgs.cs" />
+    <Compile Include="BookmarkFactory.cs" />
+    <Compile Include="Compile\CompileMathine.cs" />
+    <Compile Include="Dtos\TransInfoDto.cs" />
+    <Compile Include="EnumExt\ActivityTypeEnum.cs" />
+    <Compile Include="EnumExt\EnumHelper.cs" />
+    <Compile Include="EnumExt\ExeResultConst.cs" />
+    <Compile Include="EnumExt\RoutingType.cs" />
+    <Compile Include="EnumExt\SubmitCommand.cs" />
+    <Compile Include="EnumExt\SubmitTypeEnum.cs" />
+    <Compile Include="Models\ParallelItemModel.cs" />
+    <Compile Include="Persistence\DBFactory.cs" />
+    <Compile Include="Persistence\IPersistence.cs" />
+    <Compile Include="Persistence\OraclePlugIn.cs" />
+    <Compile Include="Persistence\SqlPlugIn.cs" />
+    <Compile Include="Routing\RoutingHost.cs" />
+    <Compile Include="Routing\RoutingModel.cs" />
+    <Compile Include="Routing\RoutingRule.cs" />
+    <Compile Include="Routing\Validate\IRoutingValidate.cs" />
+    <Compile Include="Routing\Validate\ParallelRoutingValidate.cs" />
+    <Compile Include="Routing\Validate\PropertyRoutingValidate.cs" />
+    <Compile Include="Routing\Validate\RoutingValidateBase.cs" />
+    <Compile Include="Utils\BackMsgHelper.cs" />
+    <Compile Include="Utils\ConfigTools.cs" />
+    <Compile Include="Utils\ResultInfo.cs" />
+    <Compile Include="Utils\XElementExt.cs" />
+    <Compile Include="Utils\StringBuilderExt.cs" />
+    <Compile Include="Utils\TransRouting.cs" />
+    <Compile Include="Utils\TransRoutingHelper.cs" />
+    <Compile Include="Utils\WFException.cs" />
+    <Compile Include="Validation\DesignRuleValidate.cs" />
+    <Compile Include="Validation\ITemplateValidation.cs" />
+    <Compile Include="Validation\ISubmitValidation.cs" />
+    <Compile Include="Validation\SubmitValidate.cs" />
+    <Compile Include="Utils\XmlHelper.cs" />
+    <EmbeddedResource Include="DesingerItemContext\StandBookmark.context">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Compile Include="IBookmark.cs" />
+    <Compile Include="Activities\BookmarkBase.cs" />
+    <Compile Include="Activities\ParalleBookmark.cs" />
+    <Compile Include="Activities\StandBookmark.cs" />
+    <Compile Include="Activities\StartBookmark.cs" />
+    <Compile Include="Activities\SwitchBookmark.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\DesingnerItemAttribute.cs" />
+    <EmbeddedResource Include="DesingerItemContext\ParalleBookmark.context">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DesingerItemContext\StartBookmark.context">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DesingerItemContext\SwitchBookmark.context">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DesingerItemContext\NotifyMsgBookmark.context">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Infrastructure.Data.MainBoundedContext\Infrastructure.Data.MainBoundedContext.csproj">
+      <Project>{6cea883a-6ca6-4661-9f68-43a92be1ddc6}</Project>
+      <Name>Infrastructure.Data.MainBoundedContext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure.Data.Seedwork\Infrastructure.Data.Seedwork.csproj">
+      <Project>{cc156cc6-36f4-44d4-b564-5da9face7ad1}</Project>
+      <Name>Infrastructure.Data.Seedwork</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nsun.Domain.MainBoundedContext\Nsun.Domain.MainBoundedContext.csproj">
+      <Project>{7dd4c222-fc13-48d4-b0e8-70b357756415}</Project>
+      <Name>Nsun.Domain.MainBoundedContext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nsun.Domain.Seedwork\Nsun.Domain.Seedwork.csproj">
+      <Project>{05186586-882f-442d-8a81-531d36f9712f}</Project>
+      <Name>Nsun.Domain.Seedwork</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nsun.Tools.Common\Nsun.Tools.Common.csproj">
+      <Project>{0c091925-7425-4fe8-83d6-d3370db21e8d}</Project>
+      <Name>Nsun.Tools.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nsun.Tools.Logger\Nsun.Tools.Logger.csproj">
+      <Project>{11ab9eff-d266-466d-b35c-cbf44b1379c2}</Project>
+      <Name>Nsun.Tools.Logger</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DesingerItemContext\SubRoutingBookmark.context">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DesingerItemContext\SubRoutingsBookmark.context">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

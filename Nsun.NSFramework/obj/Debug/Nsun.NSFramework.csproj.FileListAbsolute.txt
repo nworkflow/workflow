@@ -1,0 +1,10 @@
+E:\ComputerManager\Nsun.NSFramework\bin\Debug\Nsun.NSFramework.dll.config
+E:\ComputerManager\Nsun.NSFramework\bin\Debug\Nsun.NSFramework.dll
+E:\ComputerManager\Nsun.NSFramework\bin\Debug\Nsun.NSFramework.pdb
+E:\ComputerManager\Nsun.NSFramework\obj\Debug\MessageBox.baml
+E:\ComputerManager\Nsun.NSFramework\obj\Debug\MessageBox.g.cs
+E:\ComputerManager\Nsun.NSFramework\obj\Debug\Nsun.NSFramework_MarkupCompile.cache
+E:\ComputerManager\Nsun.NSFramework\obj\Debug\Nsun.NSFramework.g.resources
+E:\ComputerManager\Nsun.NSFramework\obj\Debug\Nsun.NSFramework.dll
+E:\ComputerManager\Nsun.NSFramework\obj\Debug\Nsun.NSFramework.pdb
+E:\ComputerManager\Nsun.NSFramework\obj\Debug\Nsun.NSFramework.csprojResolveAssemblyReference.cache

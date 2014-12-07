@@ -1,0 +1,82 @@
+﻿<Window x:Class="Nsun.Tools.WorkflowDesigner.Views.TemplateInfoManager"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vmt="clr-namespace:Nsun.Tools.WorkflowDesignerViewModel;assembly=Nsun.Tools.WorkflowDesignerViewModel"
+        Title="TemplateInfoManager" Height="400" Width="600" Style="{StaticResource NsunWindowStyle}">
+    <Window.Resources>
+        <vmt:TemplateInfoManagerViewModel x:Key="vm"/>
+        <Style x:Key="TreeViewStyle" TargetType="{x:Type TreeView}">
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="BorderBrush" Value="Blue"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="Both"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TreeView}">
+                        <Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                            <ScrollViewer x:Name="_tv_scrollviewer_" Background="{TemplateBinding Background}" CanContentScroll="false" Focusable="false" HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}">
+                                <ItemsPresenter/>
+                            </ScrollViewer>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="VirtualizingStackPanel.IsVirtualizing" Value="true">
+                                <Setter Property="CanContentScroll" TargetName="_tv_scrollviewer_" Value="true"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="VirtualizingStackPanel.IsVirtualizing" Value="true">
+                    <Setter Property="ItemsPanel">
+                        <Setter.Value>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel/>
+                            </ItemsPanelTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="140"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1">
+            <Button Name="btnSelect" Content="选择" Style="{StaticResource comMinButtonStyle}" Click="btnSelectTemplate_Click"/>
+            <Button Content="查看" Style="{StaticResource comMinButtonStyle}"/>
+            <Button Content="删除" Style="{StaticResource comMinButtonStyle}"/>
+            <Button Content="代码" Style="{StaticResource comMinButtonStyle}"/>
+        </StackPanel>
+
+        <TreeView Margin="5" SelectedItemChanged="tvTemplateType_SelectedItemChanged"  Name="tvTemplateType"  Grid.Row="1" Grid.RowSpan="2" Background="Transparent" Style="{StaticResource TreeViewStyle}">
+            <TreeViewItem Header="模板类型" IsExpanded="True" ItemsSource="{Binding NsTemplateTypes,Source={StaticResource vm}}" DisplayMemberPath="TEntity.TemplateType"/>
+        </TreeView>
+        <DataGrid Name="grdTemplates" Grid.Column="1"  Grid.Row="1" Grid.RowSpan="2" Margin="5" Background="Transparent" AutoGenerateColumns="False" ItemsSource="{Binding NsTemplateInfos,Source={StaticResource vm}}">
+            <DataGrid.Columns>
+                <DataGridHyperlinkColumn Header="模板名称" IsReadOnly="True" Binding="{Binding TEntity.TemplateName}"/>
+                <DataGridTextColumn Header="模板类型" IsReadOnly="True" Binding="{Binding TEntity.TemplateType}"/>
+                <DataGridTextColumn Header="创建时间" IsReadOnly="True" Binding="{Binding TEntity.CreateTime}"/>
+                <DataGridTextColumn Header="版本" IsReadOnly="True" Binding="{Binding TEntity.Version}"/>
+                <DataGridTextColumn Header="是否激活" IsReadOnly="True" Binding="{Binding TEntity.IsActive}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+
+</Window>

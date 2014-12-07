@@ -1,0 +1,378 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B437DF5F-20E0-4082-A92E-5C1D9C31A8E9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nsun.Tools.WorkflowDesigner</RootNamespace>
+    <AssemblyName>Nsun.Tools.WorkflowDesigner</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Infrastructure.Crosscutting\Libs\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WPG, Version=2.0.4988.43017, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\WPG.dll</HintPath>
+    </Reference>
+    <Reference Include="WPGBrushEditor, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\WPGBrushEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Controls\Common\CtlTable.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Common\ToolBoxItemExt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Tools\Debuging.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ApplicationToolbar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Connection.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\DesignerItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Stencils\FlowChartStencils.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Stencils\ShapeStencils.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Styles\Expander.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Styles\GroupBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Styles\ScrollBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Styles\Shared.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Styles\ToolBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Styles\ZoomBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Toolbox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\ToolboxItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DebugWorkflowInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NewTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TemplateInfoManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TemplateTypeManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Testing\RoutingTesting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\CtlTable.xaml.cs">
+      <DependentUpon>CtlTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Common\ToolBoxItemExt.xaml.cs">
+      <DependentUpon>ToolBoxItemExt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Tools\Debuging.xaml.cs">
+      <DependentUpon>Debuging.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Stencils\FlowChartStencils.cs" />
+    <Compile Include="Utils\TemplateHistory.cs" />
+    <Compile Include="Utils\ZoomBox.cs" />
+    <Compile Include="Views\DebugWorkflowInfo.xaml.cs">
+      <DependentUpon>DebugWorkflowInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewTemplate.xaml.cs">
+      <DependentUpon>NewTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TemplateInfoManager.xaml.cs">
+      <DependentUpon>TemplateInfoManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TemplateTypeManager.xaml.cs">
+      <DependentUpon>TemplateTypeManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Testing\RoutingTesting.xaml.cs">
+      <DependentUpon>RoutingTesting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connection.cs" />
+    <Compile Include="ConnectionAdorner.cs" />
+    <Compile Include="Connector.cs" />
+    <Compile Include="ConnectorAdorner.cs" />
+    <Compile Include="Controls\Common\DragThumb.cs" />
+    <Compile Include="Controls\Common\RelativePositionPanel.cs" />
+    <Compile Include="Controls\Common\ResizeThumb.cs" />
+    <Compile Include="DesignerCanvas.Commands.cs" />
+    <Compile Include="DesignerCanvas.cs" />
+    <Compile Include="DesignerItem.cs" />
+    <Compile Include="IGroupable.cs" />
+    <Compile Include="ISelectable.cs" />
+    <Compile Include="PathFinder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="RubberbandAdorner.cs" />
+    <Compile Include="SelectionService.cs" />
+    <Compile Include="Toolbox.cs" />
+    <Compile Include="ToolboxItem.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\AlignObjectsBottom.png" />
+    <Resource Include="Resources\Images\AlignObjectsCenteredHorizontal.png" />
+    <Resource Include="Resources\Images\AlignObjectsCenteredVertical.png" />
+    <Resource Include="Resources\Images\AlignObjectsLeft.png" />
+    <Resource Include="Resources\Images\AlignObjectsRight.png" />
+    <Resource Include="Resources\Images\AlignObjectsTop.png" />
+    <Resource Include="Resources\Images\BringForward.png" />
+    <Resource Include="Resources\Images\BringToFront.png" />
+    <Resource Include="Resources\Images\Copy.png" />
+    <Resource Include="Resources\Images\Cut.png" />
+    <Resource Include="Resources\Images\Delete.png" />
+    <Resource Include="Resources\Images\DistributeObjectsHorizontal.png" />
+    <Resource Include="Resources\Images\DistributeObjectsVertical.png" />
+    <Resource Include="Resources\Images\GenericDocument.png" />
+    <Resource Include="Resources\Images\Group.png" />
+    <Resource Include="Resources\Images\OpenFolder.png" />
+    <Resource Include="Resources\Images\PasteBig.png" />
+    <Resource Include="Resources\Images\Paste.png" />
+    <Resource Include="Resources\Images\Print.png" />
+    <Resource Include="Resources\Images\Save.png" />
+    <Resource Include="Resources\Images\SendBackward.png" />
+    <Resource Include="Resources\Images\SendToBack.png" />
+    <Resource Include="Resources\Images\Ungroup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Infrastructure.Data.MainBoundedContext\Infrastructure.Data.MainBoundedContext.csproj">
+      <Project>{6cea883a-6ca6-4661-9f68-43a92be1ddc6}</Project>
+      <Name>Infrastructure.Data.MainBoundedContext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nsun.Common.Themes.BlueWhite\Nsun.Common.Themes.BlueWhite.csproj">
+      <Project>{60a8b844-c4a1-4622-8811-3656918dfe3a}</Project>
+      <Name>Nsun.Common.Themes.BlueWhite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nsun.NSFramework\Nsun.NSFramework.csproj">
+      <Project>{a020cc87-5248-4e81-9a7c-020007128bf4}</Project>
+      <Name>Nsun.NSFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nsun.Tools.Common\Nsun.Tools.Common.csproj">
+      <Project>{0c091925-7425-4fe8-83d6-d3370db21e8d}</Project>
+      <Name>Nsun.Tools.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nsun.Tools.WorkflowDesignerViewModel\Nsun.Tools.WorkflowDesignerViewModel.csproj">
+      <Project>{eb5cb589-540e-4d8f-9b68-cc9e7d2c6cd1}</Project>
+      <Name>Nsun.Tools.WorkflowDesignerViewModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nsun.Workflow.Core\Nsun.Workflow.Activities.csproj">
+      <Project>{18fa2554-eb3b-4054-aeb5-fd4d5e2e6885}</Project>
+      <Name>Nsun.Workflow.Activities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nsun.Workflow.SerContainer\Nsun.Workflow.SerContainer.csproj">
+      <Project>{b5d01571-b6f1-4bd9-9558-e347d10692a6}</Project>
+      <Name>Nsun.Workflow.SerContainer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Xceed.Wpf.AvalonDock.Themes.Aero\Xceed.Wpf.AvalonDock.Themes.Aero.csproj">
+      <Project>{ba72cce0-a9fb-4995-b496-7fec5c87b85b}</Project>
+      <Name>Xceed.Wpf.AvalonDock.Themes.Aero</Name>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </ProjectReference>
+    <ProjectReference Include="..\Xceed.Wpf.AvalonDock\Xceed.Wpf.AvalonDock.csproj">
+      <Project>{db81988f-e0f2-45a0-a1fd-8c37f3d35244}</Project>
+      <Name>Xceed.Wpf.AvalonDock</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Xceed.Wpf.Toolkit\Xceed.Wpf.Toolkit.csproj">
+      <Project>{72e591d6-8f83-4d8c-8f67-9c325e623234}</Project>
+      <Name>Xceed.Wpf.Toolkit</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+    <Folder Include="Libs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TemplateBase.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\address-book--pencil.png" />
+    <Resource Include="Resources\Images\address-book-open.png" />
+    <Resource Include="Resources\Images\alarm-clock-blue.png" />
+    <Resource Include="Resources\Images\document.png" />
+    <Resource Include="Resources\Images\property-blue.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
